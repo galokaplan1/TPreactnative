@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "TPDAI",
+    "slug": "TPDAI",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "TPDAI"
+}
