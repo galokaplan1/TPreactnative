@@ -4,39 +4,37 @@ import { useNavigation } from '@react-navigation/native';
 import { getVerificacion } from '../../services/menuService';
 
 export default function LogIn() {
-    const [userState, setUserState] = useState({
-        email: "",
-        password:""
-    });
+    const [email, onChangeEmail] = useState("");
+    const [password, onChangePassword] = useState("");
     const navigation = useNavigation();
+   
+   
     const onGetPress = async () => {
-        if (!userState.email){
-            console.log("hhh")
-            Alert.alert("Por favor ingresar el id")
-        } else {
-            getVerificacion(userState)
-            .then(()=>{
-                navigation.navigate('Inicio')
-            })
-            .catch((e) => {
-                
-                Alert.alert("Error")
-                });
+        if (!email || !password)
+        {
+          Alert.alert("Complete el campo")
+          console.log("No paso")
+        }else
+        {
+          
             }
     }
+
+
     return (
       <View style={styles.container}>
         <TextInput
-          value={userState.email}
-          onChangeText={text => setUserState({...userState, email: text}) }
+          onChangeText={onChangeEmail} 
+          value={email} 
           placeholder={'Username'}
           style={styles.input}
         />
         <TextInput
-          value={userState.password}
-          onChangeText={text => setUserState({...userState, password: text}) }
+          
+          onChangeText={onChangePassword}
+          value={password} 
           placeholder={'Password'}
-          secureTextEntry={true}
+          //secureTextEntry={true}
           style={styles.input}
         />
         

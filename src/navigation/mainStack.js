@@ -26,8 +26,13 @@ const MainStack =()=>{
             component={ Index }
 
         />
-         
+         <Stack.Screen
 
+            options={{headerShown: false, }} 
+            name='Platos'
+            component={ Platos }
+
+        />
     </Stack.Navigator>
 
 
