@@ -1,8 +1,8 @@
-import axiosClient from './axiosClient'
+import axios from "axios";
 
 export const getVerificacion = async (userState) => {  
-    return axiosClient
-        .post(``,{
+    return axios
+        .post(`http://challenge-react.alkemy.org`,{
           ...userState
         })
         .then((res) => {
